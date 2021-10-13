@@ -3,5 +3,6 @@
     "password": "1337-p455w0rd-frfr",
     "mega-path": "ObsidianBackups",
     "obsidian-path": "/your/path/here",
-    "displayDetails": true
+    "displayDetails": true,
+    "delete-local-file": false
 }
