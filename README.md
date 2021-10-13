@@ -23,3 +23,6 @@ You need to change the folowing variables inside the `.env` file:
 * **obsidian-path**: Local Obsidian vault path
 * **displayDetails**: `true` or `false`
 * **delete-local-file**: `true` or `false`. Will delete the local .zip file after uploading.
+
+### Screenshots
+![ObsidianSync](images/ObsidianSync.gif)
