@@ -23,3 +23,4 @@ You need to change the folowing variables inside the `.env` file:
 * **mega-path**: The folder name in your mega account. **You will have to create it from mega.nz**.
 * **obsidian-path**: Local Obsidian vault path
 * **displayDetails**: `true` or `false`
+* **delete-local-file**: `true` or `false`. Will delete the local .zip file after uploading.
