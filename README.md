@@ -17,7 +17,7 @@ python ObsidianSync.py
 ```
 
 ### Configuration
-You need to change the folowing variables inside the `.env` file:
+You need to change the folowing variables inside the `config.json` file:
 * **email**: Your mega.nz email.
 * **password**: Your mega.nz password.
 * **obsidian-path**: Local Obsidian vault path
