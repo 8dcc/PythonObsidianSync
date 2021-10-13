@@ -1,3 +1,5 @@
+# https://github.com/r4v10l1/PythonObsidianSync
+
 import json, shutil, datetime, os
 from colorama import Fore, Style
 from mega import Mega
@@ -19,12 +21,12 @@ def main():
         config = json.load(config_file)
     email = config["email"]
     password = config["password"]
-    mega_path = config["mega-path"]
 
     m = Mega().login(email, password)
     user_details = m.get_user()
 
     # Print login information if the setting is enabled
+    print()
     data_print_green("Logged in...", "")
     if config["displayDetails"]:
         data_print_empty("Username:", user_details['name'])
@@ -45,18 +47,20 @@ def main():
     print_zip_file_finished("Saved zip file: ", local_file_path)
 
     # Upload to mega
-    print_warning(f"Uploading to the folder {mega_path}. This might take a while...")
-    mega_folder = m.find(mega_path)
-    mega_upload = m.upload(local_file_path, mega_folder)
+    print_warning(f"Uploading to mega. This might take a while...")
+    mega_upload = m.upload(local_file_path)
     mega_link = m.get_upload_link(mega_upload)
     data_print_green("File uploaded at:", f"\033[4m{mega_link}")
 
+    # Delete the local zip if true
     if config["delete-local-file"]:
         print_warning("Deleting local backup...")
         os.remove(local_file_path)
 
+    # Show the space left.
+    print()
     mega_space = m.get_storage_space(giga=True)
-    print_mega_rem(f"{str(round(quota['used'], 2))}GB", f"{str(quota['total'])}GB")
+    print_mega_rem(f"{str(round(mega_space['used'], 2))}GB", f"{str(mega_space['total'])}GB")
 
 
 main()
