@@ -1,7 +1,7 @@
 {
     "email": "test@test.com",
-    "password": "1337-p455w0rd-frfr"
-    "mega-path": "ObsidianBackups"
+    "password": "1337-p455w0rd-frfr",
+    "mega-path": "ObsidianBackups",
     "obsidian-path": "/your/path/here",
     "displayDetails": true,   
 }
