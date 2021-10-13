@@ -3,5 +3,5 @@
     "password": "1337-p455w0rd-frfr",
     "obsidian-path": "/your/path/here",
     "displayDetails": true,
-    "delete-local-file": false
+    "delete-local-file": true
 }
