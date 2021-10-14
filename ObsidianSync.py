@@ -1,6 +1,6 @@
 # https://github.com/r4v10l1/PythonObsidianSync
 
-import json, shutil, datetime, os
+import json, shutil, time, os
 from colorama import Fore, Style
 from mega import Mega
 
@@ -40,7 +40,7 @@ def main():
 
     # Create the zip file
     print_warning("Creating the zip file. This might take a while depending on the files.")
-    now = str(datetime.datetime.today().date())
+    now = time.strftime("%d-%m-%Y--%H-%M", time.gmtime())
     ziparchive = f"ObsidianVault-{now}"
     shutil.make_archive(f"ObsidianBackups/{ziparchive}", 'zip', config["obsidian-path"])
     local_file_path = f"ObsidianBackups/{ziparchive}.zip"
